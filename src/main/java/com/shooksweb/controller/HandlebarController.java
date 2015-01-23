@@ -33,10 +33,10 @@ public class HandlebarController {
 
         modelMap.addAttribute(productService.getProductsByPage(1));
         modelMap.addAttribute("numberOfProducts", productService.getNumberOfProducts());
-        modelMap.addAttribute(pageService.getPage("product"));
         modelMap.addAttribute("firstProduct", productService.getFirstProductForPage());
-        modelMap.addAttribute("lastProduct", productService.getLastProductForPage());
-        modelMap.addAttribute("pages", productService.getPages());
+		modelMap.addAttribute("lastProduct", productService.getLastProductForPage());
+		modelMap.addAttribute("pages", productService.getPages());
+		modelMap.addAttribute(pageService.getPage("product"));
 
         return template.apply(modelMap);
     }
