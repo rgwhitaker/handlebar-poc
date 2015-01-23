@@ -31,10 +31,8 @@ public class HandlebarController {
     public String index(ModelMap modelMap) throws IOException {
         Template template = templateService.getTemplate("index");
 
-        int numberOfProducts = productService.getNumberOfProducts();
-
         modelMap.addAttribute(productService.getProductsByPage(1));
-        modelMap.addAttribute("numberOfProducts", numberOfProducts);
+        modelMap.addAttribute("numberOfProducts", productService.getNumberOfProducts());
         modelMap.addAttribute(pageService.getPage("product"));
         modelMap.addAttribute("firstProduct", productService.getFirstProductForPage());
         modelMap.addAttribute("lastProduct", productService.getLastProductForPage());
